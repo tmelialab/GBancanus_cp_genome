@@ -1,0 +1,7 @@
+#Possible CDS annotation problems
+rps19_88697_88976_1	possibly missing 5' end --> alternative start codon "GTG"
+ndhD_126811_128332_1	possibly missing 5' end --> alternative start codon "GTG"
+ndhD_137128_138649_1	possibly missing 5' end --> alternative start codon "GTG"
+#---------------------------------------------------------------------------
+Possible tRNA annotation problems
+trnfM-CAU_[39023:39096](-)	possibly incorrect genename	the correct genename may be: trnM-CAU

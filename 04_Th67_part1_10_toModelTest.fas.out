@@ -1,0 +1,180 @@
+--------------------------------------------------------------------------------
+ModelTest-NG vx.y.z
+
+Input data:
+  MSA:        Th67_part1_10_toModelTest.fas
+  Tree:       Maximum parsimony
+    file:           -
+  #taxa:            67
+  #sites:           167539
+  #patterns:        17266
+  Max. thread mem:  563 MB
+
+Output:
+  Log:           Th67_part1_10_toModelTest.fas.log
+  Starting tree: Th67_part1_10_toModelTest.fas.tree
+  Results:       Th67_part1_10_toModelTest.fas.out
+
+Selection options:
+  # dna schemes:      3
+  # dna models:       24
+  include model parameters:
+    Uniform:         true
+    p-inv (+I):      true
+    gamma (+G):      true
+    both (+I+G):     true
+    free rates (+R): false
+    fixed freqs:     true
+    estimated freqs: true
+    #categories:     4
+  gamma rates mode:   mean
+  asc bias:           none
+  epsilon (opt):      0.01
+  epsilon (par):      0.05
+  keep branches:      false
+
+Additional options:
+  verbosity:        very low
+  threads:          16/64
+  RNG seed:         12345
+  subtree repeats:  enabled
+--------------------------------------------------------------------------------
+
+BIC       model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  GTR+I+G4          10   -480800.5646    963297.2141         0.0000    1.0000
+       2  GTR+G4             9   -481039.0428    963762.1416       464.9275    0.0000
+       3  GTR+I              9   -481768.0665    965220.1890      1922.9749    0.0000
+       4  HKY+I+G4           6   -482288.3204    966224.6098      2927.3957    0.0000
+       5  HKY+G4             5   -482541.7560    966719.4521      3422.2380    0.0000
+       6  HKY+I              5   -483203.3288    968042.5977      4745.3836    0.0000
+       7  F81+I+G4           5   -485108.0451    971852.0302      8554.8161    0.0000
+       8  F81+G4             4   -485365.8727    972355.6565      9058.4424    0.0000
+       9  F81+I              4   -486001.5660    973627.0431     10329.8290    0.0000
+      10  GTR                8   -487983.6965    977639.4201     14342.2060    0.0000
+--------------------------------------------------------------------------------
+Best model according to BIC
+---------------------------
+Model:              GTR+I+G4
+lnL:                -480800.5646
+Frequencies:        0.3340 0.1677 0.1645 0.3338
+Subst. Rates:       0.9351 1.5362 0.3654 0.6406 1.5227 1.0000 
+Inv. sites prop:    0.3513
+Gamma shape:        0.6892
+Score:              963297.2141
+Weight:             1.0000
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              -
+Gamma:              0.0000
+Gamma-Inv:          1.0000
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              -
+Alpha:              0.2959
+Alpha-P.Inv:        0.6892
+P.Inv-Alpha:        0.3513
+Frequencies:        0.3340 0.1677 0.1645 0.3338 
+
+Commands:
+  > phyml  -i Th67_part1_10_toModelTest.fas -m 012345 -f m -v e -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s Th67_part1_10_toModelTest.fas -m GTRGAMMAIX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa Th67_part1_10_toModelTest.fas --model GTR+I+G4
+  > paup -s Th67_part1_10_toModelTest.fas
+  > iqtree -s Th67_part1_10_toModelTest.fas -m GTR+I+G4
+
+AIC       model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  GTR+I+G4          10   -480800.5646    961883.1291         0.0000    1.0000
+       2  GTR+G4             9   -481039.0428    962358.0856       474.9565    0.0000
+       3  GTR+I              9   -481768.0665    963816.1330      1933.0038    0.0000
+       4  HKY+I+G4           6   -482288.3204    964850.6407      2967.5116    0.0000
+       5  HKY+G4             5   -482541.7560    965355.5120      3472.3828    0.0000
+       6  HKY+I              5   -483203.3288    966678.6576      4795.5285    0.0000
+       7  F81+I+G4           5   -485108.0451    970488.0901      8604.9610    0.0000
+       8  F81+G4             4   -485365.8727    971001.7454      9118.6163    0.0000
+       9  F81+I              4   -486001.5660    972273.1319     10390.0028    0.0000
+      10  GTR                8   -487983.6965    976245.3931     14362.2639    0.0000
+--------------------------------------------------------------------------------
+Best model according to AIC
+---------------------------
+Model:              GTR+I+G4
+lnL:                -480800.5646
+Frequencies:        0.3340 0.1677 0.1645 0.3338
+Subst. Rates:       0.9351 1.5362 0.3654 0.6406 1.5227 1.0000 
+Inv. sites prop:    0.3513
+Gamma shape:        0.6892
+Score:              961883.1291
+Weight:             1.0000
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              -
+Gamma:              0.0000
+Gamma-Inv:          1.0000
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              -
+Alpha:              0.2959
+Alpha-P.Inv:        0.6892
+P.Inv-Alpha:        0.3513
+Frequencies:        0.3340 0.1677 0.1645 0.3338 
+
+Commands:
+  > phyml  -i Th67_part1_10_toModelTest.fas -m 012345 -f m -v e -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s Th67_part1_10_toModelTest.fas -m GTRGAMMAIX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa Th67_part1_10_toModelTest.fas --model GTR+I+G4
+  > paup -s Th67_part1_10_toModelTest.fas
+  > iqtree -s Th67_part1_10_toModelTest.fas -m GTR+I+G4
+
+AICc      model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  GTR+I+G4          10   -480800.5646    961883.1291         0.0000    1.0000
+       2  GTR+G4             9   -481039.0428    962358.0856       474.9565    0.0000
+       3  GTR+I              9   -481768.0665    963816.1330      1933.0038    0.0000
+       4  HKY+I+G4           6   -482288.3204    964850.6407      2967.5116    0.0000
+       5  HKY+G4             5   -482541.7560    965355.5120      3472.3828    0.0000
+       6  HKY+I              5   -483203.3288    966678.6576      4795.5285    0.0000
+       7  F81+I+G4           5   -485108.0451    970488.0901      8604.9610    0.0000
+       8  F81+G4             4   -485365.8727    971001.7454      9118.6163    0.0000
+       9  F81+I              4   -486001.5660    972273.1319     10390.0028    0.0000
+      10  GTR                8   -487983.6965    976245.3931     14362.2639    0.0000
+--------------------------------------------------------------------------------
+Best model according to AICc
+---------------------------
+Model:              GTR+I+G4
+lnL:                -480800.5646
+Frequencies:        0.3340 0.1677 0.1645 0.3338
+Subst. Rates:       0.9351 1.5362 0.3654 0.6406 1.5227 1.0000 
+Inv. sites prop:    0.3513
+Gamma shape:        0.6892
+Score:              961883.1291
+Weight:             1.0000
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              -
+Gamma:              0.0000
+Gamma-Inv:          1.0000
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              -
+Alpha:              0.2959
+Alpha-P.Inv:        0.6892
+P.Inv-Alpha:        0.3513
+Frequencies:        0.3340 0.1677 0.1645 0.3338 
+
+Commands:
+  > phyml  -i Th67_part1_10_toModelTest.fas -m 012345 -f m -v e -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s Th67_part1_10_toModelTest.fas -m GTRGAMMAIX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa Th67_part1_10_toModelTest.fas --model GTR+I+G4
+  > paup -s Th67_part1_10_toModelTest.fas
+  > iqtree -s Th67_part1_10_toModelTest.fas -m GTR+I+G4
+Done
